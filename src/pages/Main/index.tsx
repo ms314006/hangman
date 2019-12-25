@@ -1,8 +1,14 @@
 import React from 'react';
-import styles from './index.scss';
+import Layout from '../../components/Layout';
+import Hangman from '../../components/Hangman';
 
 const Main:React.FC = () => (
-  <div className={styles.main}>Helllo world</div>
+  <Layout>
+    <Hangman />
+    <div style={{ background: '#ffa', width: '100%', height: '100%' }} />
+    <div style={{ background: '#aff', width: '100%', height: '100%' }} />
+    <div style={{ background: '#aaa', width: '100%', height: '100%' }} />
+  </Layout>
 );
 
 export default Main;
