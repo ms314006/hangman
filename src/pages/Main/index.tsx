@@ -1,10 +1,10 @@
 import React from 'react';
 import Layout from '../../components/Layout';
-import Hangman from '../../components/Hangman';
+import styles from './index.scss';
 
 const Main:React.FC = () => (
   <Layout>
-    <Hangman />
+    <div className={styles.title}>Hungman</div>
     <div style={{ background: '#ffa', width: '100%', height: '100%' }} />
     <div style={{ background: '#aff', width: '100%', height: '100%' }} />
     <div style={{ background: '#aaa', width: '100%', height: '100%' }} />
