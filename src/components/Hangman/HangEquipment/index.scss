@@ -1,0 +1,43 @@
+.hangmanEquipment {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  .base {
+    div {
+      width: 60px;
+      position: absolute;
+      bottom: 20px;
+      border: 2px #000000 solid;
+    }
+    .left {
+      left: 24px;
+      transform:rotate(-44deg);
+    }
+    .right {
+      left: 68px;
+      transform:rotate(44deg);
+    }
+  }
+
+  .bracket {
+    div {
+      position: absolute;
+      border: 2px #000000 solid;
+    }
+    .left {
+      height: 200px;
+      bottom: 44px;
+      left: 76px;
+    }
+    .top {
+      width: 160px;
+      bottom: 248px;
+      left: 76px;
+    }
+    .right {
+      height: 60px;
+      top: 40px;
+      left: 240px;
+    }
+  }
+}
