@@ -9,11 +9,20 @@ const Main:React.FC = () => (
   <Layout>
     <div className={styles.title}>Hungman</div>
     <div className={styles.words}>
-      {
-        words.map(word => (
-          <Word key={word} word={word} clickEvent={() => { console.log(word); }} />
-        ))
-      }
+      <div className={styles.wordRow}>
+        {
+          words.slice(0, 13).map(word => (
+            <Word key={word} word={word} clickEvent={() => { console.log(word); }} />
+          ))
+        }
+      </div>
+      <div className={styles.wordRow}>
+        {
+          words.slice(13).map(word => (
+            <Word key={word} word={word} clickEvent={() => { console.log(word); }} />
+          ))
+        }
+      </div>
     </div>
     <Hangman />
     <div style={{ background: '#aaa', width: '100%', height: '100%' }} />
