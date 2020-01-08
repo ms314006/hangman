@@ -2,20 +2,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 60px;
+  font-size: 72px;
   font-family: 'Shadows Into Light', cursive;
   color: #000000;
   transition: all .5s ease;
 }
 
 .title:hover {
-  font-size: 80px;
+  font-size: 92px;
   color: #b91717;
 }
 
 .words {
-  padding: 0px 60px;
+  padding: 20px 160px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
