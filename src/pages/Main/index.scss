@@ -26,3 +26,9 @@
   display: flex;
   justify-content: space-around;
 }
+
+.gameBlock {
+  padding: 0px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

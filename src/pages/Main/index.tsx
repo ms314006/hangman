@@ -24,7 +24,9 @@ const Main:React.FC = () => (
         }
       </div>
     </div>
-    <Hangman />
+    <div className={styles.gameBlock}>
+      <Hangman />
+    </div>
     <div style={{ background: '#aaa', width: '100%', height: '100%' }} />
   </Layout>
 );
