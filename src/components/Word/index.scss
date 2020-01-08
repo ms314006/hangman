@@ -1,4 +1,9 @@
 .main {
   font-size: 48px;
   font-family: 'Shadows Into Light', cursive;
+  transition: all .5s ease;
+}
+
+.main:hover {
+  font-size: 80px;
 }

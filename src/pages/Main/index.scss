@@ -4,6 +4,13 @@
   align-items: center;
   font-size: 60px;
   font-family: 'Shadows Into Light', cursive;
+  color: #000000;
+  transition: all .5s ease;
+}
+
+.title:hover {
+  font-size: 80px;
+  color: #b91717;
 }
 
 .words {
