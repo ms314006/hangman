@@ -1,0 +1,53 @@
+.man {
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  div {
+    border-width: 1px;
+    border-color: #000000;
+    border-style: solid; 
+    position: absolute;
+    transition: border-color .5s ease;
+  }
+  .head {
+    border-width: 2px;
+    top: 106px;
+    left: 218px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
+  .body {
+    top: 154px;
+    left: 240px;
+    height: 60px;
+  }
+  .leftHand {
+    width: 40px;
+    top: 176px;
+    left: 204px;
+    transform:rotate(-44deg);
+  }
+  .rightHand {
+    width: 40px;
+    top: 176px;
+    left: 236px;
+    transform:rotate(44deg);
+  }
+  .leftFoot {
+    width: 40px;
+    top: 230px;
+    left: 208px;
+    transform:rotate(-56deg);
+  }
+  .rightFoot {
+    width: 40px;
+    top: 230px;
+    left: 232px;
+    transform:rotate(56deg);
+  }
+  .displayBorder {
+    border-color: #FFFFFF;
+  }
+}
