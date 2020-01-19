@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import Word from '../../components/Word';
 import Hangman from '../../components/Hangman';
+import Question from '../../components/Question';
 import words from '../../asset/words';
 import styles from './index.scss';
 
@@ -26,6 +27,7 @@ const Main:React.FC = () => (
     </div>
     <div className={styles.gameBlock}>
       <Hangman />
+      <Question />
     </div>
     <div style={{ background: '#aaa', width: '100%', height: '100%' }} />
   </Layout>

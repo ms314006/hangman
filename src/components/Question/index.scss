@@ -1,0 +1,14 @@
+.question {
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 60px;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.word {
+  width: 30px;
+  text-align: center;
+  border-bottom: 3px #000000 solid;
+}
