@@ -27,7 +27,10 @@ const Main:React.FC = () => (
     </div>
     <div className={styles.gameBlock}>
       <Hangman />
-      <Question />
+      <div className={styles.left}>
+        <Question />
+        <button type="button" className={styles.restartBtn}>Restart</button>
+      </div>
     </div>
     <div style={{ background: '#aaa', width: '100%', height: '100%' }} />
   </Layout>
