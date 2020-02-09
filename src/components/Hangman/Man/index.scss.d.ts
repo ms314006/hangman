@@ -5,4 +5,4 @@ export const leftHand: string;
 export const rightHand: string;
 export const leftFoot: string;
 export const rightFoot: string;
-export const displayBorder: string;
+export const hiddenBorder: string;

@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import styles from './index.scss';
 
 const HangEquipment:React.FC = () => {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(-1);
   const getDisplayOfParts = (partType: string) => {
     const displaySortOfPart = [
       'head', 'body', 'leftHand', 'rightHand', 'leftFoot', 'rightFoot',
     ];
 
-    const isDisplayBorder = () => (
+    const isHiddenBorder = () => (
       step < displaySortOfPart.findIndex(part => part === partType)
     );
 
     return `
-      ${isDisplayBorder() && styles.displayBorder}
+      ${isHiddenBorder() && styles.hiddenBorder}
     `;
   };
 
