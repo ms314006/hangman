@@ -9,13 +9,13 @@ import useQuestion from '../../hooks/useQuestion';
 import styles from './index.scss';
 
 const Main:React.FC = () => {
-  const [answer, updateAnsweredProgress] = useQuestion();
+  const [question, answered, updateAnsweredProgress] = useQuestion();
   const handleWordClick = (word: string) => () => {
-    updateAnsweredProgress(word.toLowerCase());
+    updateAnsweredProgress(word);
   };
   return (
     <Layout>
-      <QuestionContext.Provider value={answer}>
+      <QuestionContext.Provider value={{ question, answered }}>
         <div className={styles.title}>Hungman</div>
         <div className={styles.words}>
           <div className={styles.wordRow}>

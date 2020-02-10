@@ -1,8 +1,8 @@
 const questions = [
-  { answer: 'apple' },
-  { answer: 'banana' },
-  { answer: 'cat' },
-  { answer: 'super' },
+  { answer: 'APPLE' },
+  { answer: 'BANANA' },
+  { answer: 'CAT' },
+  { answer: 'SUPER' },
 ];
 
 export default questions;

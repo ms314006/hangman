@@ -1,6 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import QuestionContext from '../../context/QuestionContext';
+import { arrayFindTarget } from '../../utils/array';
 import styles from './index.scss';
+
 
 interface WordProps {
   word: string
@@ -9,20 +11,15 @@ interface WordProps {
 
 const Word: React.FC<WordProps> = (props: WordProps) => {
   const { word, clickEvent } = props;
-  const [clicked, setClicked] = useState(false);
-  const answer: any = useContext(QuestionContext);
+  const { question, answered }: any = useContext(QuestionContext);
 
-  const isAnswered = () => {
-    const target = answer.find(
-      ({ word: answerWord }) => answerWord === word.toLowerCase(),
-    );
-    if (!target) return false;
-    return target.answered;
-  };
+  const isAnswer = () => (
+    arrayFindTarget(answered, word) && arrayFindTarget(question, word)
+  );
 
   const getFontColor = () => {
-    if (isAnswered()) return '#00FF00';
-    if (clicked) return '#FF0000';
+    if (isAnswer()) return '#00FF00';
+    if (arrayFindTarget(answered, word)) return '#FF0000';
     return '#000000';
   };
   return (
@@ -30,10 +27,8 @@ const Word: React.FC<WordProps> = (props: WordProps) => {
       className={styles.main}
       style={{ color: getFontColor() }}
       onClick={() => {
-        if (!clicked) {
-          setClicked(true);
-          clickEvent();
-        }
+        if (arrayFindTarget(answered, word)) return;
+        clickEvent();
       }}
       onKeyDown={() => {}}
     >
