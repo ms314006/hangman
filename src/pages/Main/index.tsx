@@ -3,9 +3,12 @@ import Layout from '../../components/Layout';
 import Word from '../../components/Word';
 import Hangman from '../../components/Hangman';
 import Question from '../../components/Question';
+import RestartButton from '../../components/RestartButton';
+import ResultWindow from '../../components/ResultWindow';
 import words from '../../asset/words';
 import QuestionContext from '../../context/QuestionContext';
 import useQuestion from '../../hooks/useQuestion';
+import { isPlaying, isWin } from '../../utils';
 import styles from './index.scss';
 
 const Main:React.FC = () => {
@@ -15,7 +18,7 @@ const Main:React.FC = () => {
   };
   return (
     <Layout>
-      <QuestionContext.Provider value={{ question, answered }}>
+      <QuestionContext.Provider value={{ question, answered, resetAnsweresAndQuestion }}>
         <div className={styles.header}>
           <span className={styles.title}>Hungman</span>
         </div>
@@ -47,15 +50,13 @@ const Main:React.FC = () => {
           <Hangman />
           <div className={styles.left}>
             <Question />
-            <button
-              type="button"
-              className={styles.restartBtn}
-              onClick={resetAnsweresAndQuestion}
-            >
-              Restart
-            </button>
+            <RestartButton text="Restart" />
           </div>
         </div>
+        {
+          isPlaying(question, answered) ?
+            null : <ResultWindow isWin={isWin(question, answered)} />
+        }
       </QuestionContext.Provider>
     </Layout>
   );
