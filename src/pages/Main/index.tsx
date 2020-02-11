@@ -20,7 +20,7 @@ const Main:React.FC = () => {
     <Layout>
       <QuestionContext.Provider value={{ question, answered, resetAnsweresAndQuestion }}>
         <div className={styles.header}>
-          <span className={styles.title}>Hungman</span>
+          <span className={styles.title}>Hangman</span>
         </div>
         <div className={styles.words}>
           <div className={styles.wordRow}>
