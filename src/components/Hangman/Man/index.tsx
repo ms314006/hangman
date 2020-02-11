@@ -1,23 +1,17 @@
 import React, { useContext } from 'react';
 import QuestionContext from '../../../context/QuestionContext';
+import { wrongAnsweredCount } from '../../../utils';
 import styles from './index.scss';
 
 const HangEquipment:React.FC = () => {
   const { question, answered }: any = useContext(QuestionContext);
   const getDisplayOfParts = (partType: string) => {
-    let wrongAnswered = [...answered];
-    question.forEach((word: string) => {
-      wrongAnswered = wrongAnswered.filter(
-        (answeredWord: string) => answeredWord !== word,
-      );
-    });
-
     const displaySortOfPart = [
       'initial', 'head', 'body', 'leftHand', 'rightHand', 'leftFoot', 'rightFoot',
     ];
 
     const isHiddenBorder = () => (
-      wrongAnswered.length < displaySortOfPart.findIndex(part => part === partType)
+      wrongAnsweredCount(question, answered) < displaySortOfPart.findIndex(part => part === partType)
     );
 
     return `
