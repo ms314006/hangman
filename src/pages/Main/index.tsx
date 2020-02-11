@@ -16,7 +16,9 @@ const Main:React.FC = () => {
   return (
     <Layout>
       <QuestionContext.Provider value={{ question, answered }}>
-        <div className={styles.title}>Hungman</div>
+        <div className={styles.header}>
+          <span className={styles.title}>Hungman</span>
+        </div>
         <div className={styles.words}>
           <div className={styles.wordRow}>
             {
@@ -54,7 +56,6 @@ const Main:React.FC = () => {
             </button>
           </div>
         </div>
-        <div style={{ background: '#aaa', width: '100%', height: '100%' }} />
       </QuestionContext.Provider>
     </Layout>
   );

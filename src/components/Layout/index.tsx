@@ -5,7 +5,9 @@ const Layout:React.FC = (props) => {
   const { children } = props;
   return (
     <div className={styles.main}>
-      {children}
+      <div className={styles.content}>
+        {children}
+      </div>
     </div>
   );
 };

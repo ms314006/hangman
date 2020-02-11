@@ -1,10 +1,13 @@
-.title {
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 72px;
   font-family: 'Shadows Into Light', cursive;
   color: #000000;
+}
+
+.title {
   transition: all .5s ease;
 }
 
