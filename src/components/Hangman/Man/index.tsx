@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import QuestionContext from '../../../context/QuestionContext';
 import styles from './index.scss';
 
 const HangEquipment:React.FC = () => {
-  const [step, setStep] = useState(-1);
+  const { question, answered }: any = useContext(QuestionContext);
   const getDisplayOfParts = (partType: string) => {
+    let wrongAnswered = [...answered];
+    question.forEach((word: string) => {
+      wrongAnswered = wrongAnswered.filter(
+        (answeredWord: string) => answeredWord !== word,
+      );
+    });
+
     const displaySortOfPart = [
-      'head', 'body', 'leftHand', 'rightHand', 'leftFoot', 'rightFoot',
+      'initial', 'head', 'body', 'leftHand', 'rightHand', 'leftFoot', 'rightFoot',
     ];
 
     const isHiddenBorder = () => (
-      step < displaySortOfPart.findIndex(part => part === partType)
+      wrongAnswered.length < displaySortOfPart.findIndex(part => part === partType)
     );
 
     return `
@@ -19,18 +27,6 @@ const HangEquipment:React.FC = () => {
 
   return (
     <div className={styles.man}>
-      <button
-        type="button"
-        onClick={() => { setStep(step + 1); }}
-      >
-        ClickMe!
-      </button>
-      <button
-        type="button"
-        onClick={() => { setStep(0); }}
-      >
-        Reset!
-      </button>
       <div className={`${styles.head} ${getDisplayOfParts('head')}`} />
       <div className={`${styles.body} ${getDisplayOfParts('body')}`} />
       <div className={`${styles.leftHand} ${getDisplayOfParts('leftHand')}`} />
