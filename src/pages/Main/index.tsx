@@ -9,7 +9,7 @@ import useQuestion from '../../hooks/useQuestion';
 import styles from './index.scss';
 
 const Main:React.FC = () => {
-  const [question, answered, updateAnsweredProgress] = useQuestion();
+  const [question, answered, updateAnsweredProgress, resetAnsweresAndQuestion] = useQuestion();
   const handleWordClick = (word: string) => () => {
     updateAnsweredProgress(word);
   };
@@ -45,7 +45,13 @@ const Main:React.FC = () => {
           <Hangman />
           <div className={styles.left}>
             <Question />
-            <button type="button" className={styles.restartBtn}>Restart</button>
+            <button
+              type="button"
+              className={styles.restartBtn}
+              onClick={resetAnsweresAndQuestion}
+            >
+              Restart
+            </button>
           </div>
         </div>
         <div style={{ background: '#aaa', width: '100%', height: '100%' }} />
